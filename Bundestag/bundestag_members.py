@@ -1,4 +1,9 @@
-﻿import requests
+﻿"""
+Collecting of Bundestag members from open source
+"""
+
+
+import requests
 from bs4 import BeautifulSoup
 import json
 
