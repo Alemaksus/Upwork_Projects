@@ -1,0 +1,1 @@
+﻿instagram_password = "your_password"

@@ -20,7 +20,6 @@ def get_data(url):
         file.write(r.text)
 
     # get hotels urls
-    r = requests.get("https://api.rsrv.me/hc.php?a=hc&most_id=1317&l=ru&sort=most", headers=headers)
     # print(r.text)
     soup = BeautifulSoup(r.text, "lxml")
 
@@ -35,22 +34,22 @@ def get_data_with_selenium(url):
     options = webdriver.FirefoxOptions()
     options.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0")
 
-    # try:
-    #     driver = webdriver.Firefox(
-    #         executable_path="C:\Coding\Data Science\Data Extraction\Upwork_Projects\Upwork_Projects\Tury\geckodriver.exe",
-    #         options=options
-    #     )
-    #     driver.get(url=url)
-    #     time.sleep(5)
-    #
-    #     with open("index_selenium.html", "w", encoding="utf-8") as file:
-    #         file.write(driver.page_source)
-    #
-    # except Exception as ex:
-    #     print(ex)
-    # finally:
-    #     driver.close()
-    #     driver.quit()
+    try:
+        driver = webdriver.Firefox(
+            executable_path="C:\\Coding\\Data Science\\Data Extraction\\Upwork_Projects\\Upwork_Projects\\Tury\\geckodriver",
+            options=options
+        )
+        driver.get(url=url)
+        time.sleep(5)
+
+        with open("index_selenium.html", "w", encoding="utf-8") as file:
+            file.write(driver.page_source)
+
+    except Exception as ex:
+        print(ex)
+    finally:
+        driver.close()
+        driver.quit()
 
     with open("index_selenium.html") as file:
         src = file.read()
