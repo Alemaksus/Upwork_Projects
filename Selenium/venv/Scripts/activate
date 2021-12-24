@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Coding\Data Science\Data Extraction\Upwork_Projects\Upwork_Projects\Selenium\venv"
+VIRTUAL_ENV="C:\Coding\Data Science\Data Extraction\Upwork_Projects\Upwork_Projects\selenium\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

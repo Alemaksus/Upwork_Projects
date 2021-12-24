@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Coding\Data Science\Data Extraction\Upwork_Projects\Upwork_Projects\Selenium\venv
+set VIRTUAL_ENV=C:\Coding\Data Science\Data Extraction\Upwork_Projects\Upwork_Projects\selenium\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
