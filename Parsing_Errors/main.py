@@ -1,7 +1,10 @@
 ﻿import requests
 from bs4 import BeautifulSoup
+import time
 
 """
+Эта функция обрабатывает любый ошибки, возникающие при парсинге сайтов.
+
 Ошибки при парсинге дейсвительно нужно обрабатывать. В качестве готовый альтернативы этой функции советую сторонюю
  библиотеку tenacity. Она позволяет оборачивать функции в декоратор @retry, или использовать аналогичный 
  контекстный менеджер. Можно также ограничить количество попыток, настроить задержку между попытками вплоть до 
@@ -9,7 +12,6 @@ from bs4 import BeautifulSoup
  Можно указать для каких исключений повторять попытку, либо при каком результате функции. 
  Ну и самое сочное, это также работает для асинхронных функций (@retry и контекстный менеджер AsyncRetrying)
 """
-
 
 
 def test_request(url, retry=5):
@@ -33,7 +35,7 @@ def test_request(url, retry=5):
 
 
 def main():
-    with open("Parsing_Errors/labirint_21_01_2022_10_54_async.txt") as file:
+    with open("Parsing_Errors/books_urls.txt") as file:
         books_urls = file.read().splitlines()
 
     for book_url in books_urls:
